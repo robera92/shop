@@ -28,6 +28,8 @@ const Header = () => {
         let token = JSON.parse(localStorage.getItem('login-token'));
         if(token !== null){ // has token, check if token legit.
            fetchData(token);
+        }else{
+            user.logOutUser(true); // token not legit, destroy user data.
         }
       }, []);
   
