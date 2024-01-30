@@ -13,6 +13,7 @@ import UserArea from "./components/users/UserArea";
 import ViewProduct from "./components/product/ViewProduct";
 import ScrollToTop from "./components/other/ScrollToTop";
 import EditProduct from "./components/product/EditProduct";
+import NotAllowed from "./components/other/NotAllowed";
 export const baseApiUrl = 'https://demo-api.ideabridge.lt/api/';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
             <Route path="/edit-product/:id" element={<EditProduct/>}/>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path='*' element={<NotAllowed />}/>
           </Routes>
           <Footer/>
         </UserProvider>
