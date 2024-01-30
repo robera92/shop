@@ -1,10 +1,10 @@
 
-    import { useParams } from "react-router-dom";
-    import { useEffect, useState } from "react";
-    import { useUserContext } from "../../context/userContext";
-    import NotAllowed from "../other/NotAllowed";
-    import getSingleProduct from "../../services/getSingleProduct";
-    import editSingleProduct from "../../services/editProduct";
+import { useNavigate, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useUserContext } from "../../context/userContext";
+import NotAllowed from "../other/NotAllowed";
+import getSingleProduct from "../../services/getSingleProduct";
+import editSingleProduct from "../../services/editProduct";
 
 const EditProduct = () => {
 
@@ -22,6 +22,7 @@ const EditProduct = () => {
         const [alert, setAlert] = useState('');
         const [sucess, setSucess] = useState('');
         const [productTitle, setProductTitle] = useState('');
+        const navigate = useNavigate();
 
         async function fetchProduct(data) {
             let response = await getSingleProduct(data);
@@ -72,6 +73,9 @@ const EditProduct = () => {
     
         return (<>
             <section className="">
+                <div className="text-end">
+                    <button onClick={() => navigate(-1)} className="btn btn-secondary">&larr; Go Back</button>
+                </div>
                 <h2>Editing {productTitle}</h2>
                 <hr/>
                 <form onSubmit={handleSubmit}>
@@ -96,10 +100,13 @@ const EditProduct = () => {
                 {alert && <div className="d-block"><div className="alert alert-danger mb-0" role="alert">{alert}</div></div>}
                 {sucess && <div className="d-block"><div className="alert alert-success mb-0" role="alert">{sucess}</div></div>}
                 <div className="my-3">
-                    <button className="btn btn-primary" type="submit">Submit</button>
+                    <button className="btn btn-primary btn-lg px-5" type="submit">Submit</button>
                 </div>
                 </div>
                 </form>
+                <div className="mt-5">
+                    <button onClick={() => navigate(-1)} className="btn btn-secondary">&larr; Go Back</button>
+                </div>
             </section>
         </>);
 }

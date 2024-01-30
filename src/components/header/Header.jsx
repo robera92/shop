@@ -50,7 +50,7 @@ const Header = () => {
     return (
         <nav className="navbar navbar-expand-lg border-bottom mb-4">
         <div className="container-fluid">
-            <Link to="/" className="navbar-brand">Home</Link>
+            <Link to="/" className="navbar-brand"><img src={process.env.PUBLIC_URL + "/images/logo.png"}/></Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
             </button>
@@ -67,7 +67,7 @@ const Header = () => {
                     <li><Link className="dropdown-item" to="/login">Login</Link></li>
                     <li><Link className="dropdown-item" to="/register">Register</Link></li>
                     </> : <>
-                    <li><Link className="dropdown-item" to="/">Home</Link></li>
+                    <li><Link className="dropdown-item" to="#">Profile</Link></li>
                     <li><a className="dropdown-item" onClick={ () => { handleLogout() } }>Logout</a></li>
                     </>
                     }

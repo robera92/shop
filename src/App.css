@@ -1,0 +1,12 @@
+.product-thumbnail{
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.product-row:hover{
+    background-color: #e2e2e27a;
+}
+
+.not-allowed{
+    margin: 20% 0;
+}
