@@ -12,6 +12,7 @@ import { UserProvider, useUserContext } from "./context/userContext";
 import UserArea from "./components/users/UserArea";
 import ViewProduct from "./components/product/ViewProduct";
 import ScrollToTop from "./components/other/ScrollToTop";
+import EditProduct from "./components/product/EditProduct";
 export const baseApiUrl = 'https://demo-api.ideabridge.lt/api/';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <Route path="/" element={<><Products/></>} />
             <Route path="/page/:number" element={<Products/>} />
             <Route path="/product/:id" element={<ViewProduct/>}/>
+            <Route path="/edit-product/:id" element={<EditProduct/>}/>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
           </Routes>

@@ -29,7 +29,7 @@ const Product = ({product, handleProducts}) => {
             <div className="col-lg-4 col-md-6 d-flex flex-column justify-content-center">
                 <div className="d-grid gap-2 d-md-block">  
                   <Link to={`/product/${product.id}`} className="btn btn-primary m-1">View details</Link>
-                  <button className="btn btn-secondary m-1">Edit product</button>
+                  <Link to={`/edit-product/${product.id}`}  className="btn btn-secondary m-1">Edit product</Link>
                   <button className="btn btn-warning m-1" onClick={ ()=> { if(window.confirm('Are you sure to delete?')){ handleDeleteProduct(product.id, user.user_data.user.access_token); } } }>Delete product</button>
                 </div>
             </div>
